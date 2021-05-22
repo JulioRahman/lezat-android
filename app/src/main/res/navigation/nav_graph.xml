@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/ListFragment"
-        android:name="com.kencur.lezat.ListFragment"
+        android:name="com.kencur.lezat.ui.ListFragment"
         android:label="@string/list_fragment_label"
         tools:layout="@layout/fragment_list">
 
         <action
-            android:id="@+id/action_ListFragment_to_DetailFragment"
+            android:id="@+id/action_List_to_Detail"
             app:destination="@id/DetailFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
@@ -22,16 +22,12 @@
 
     <fragment
         android:id="@+id/DetailFragment"
-        android:name="com.kencur.lezat.DetailFragment"
-        android:label="{title}"
+        android:name="com.kencur.lezat.ui.DetailFragment"
+        android:label=""
         tools:layout="@layout/fragment_detail">
 
         <argument
-            android:name="title"
-            app:argType="string" />
-
-        <argument
             android:name="mealArg"
-            app:argType="com.kencur.lezat.Meal" />
+            app:argType="com.kencur.lezat.model.Meal" />
     </fragment>
 </navigation>

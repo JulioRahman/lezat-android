@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/dimens_8dp"
+    android:paddingBottom="@dimen/dimens_32dp">
+
+    <TextView
+        android:id="@+id/b1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="&#8226;"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/t1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimens_16dp"
+        android:lineSpacingExtra="@dimen/dimens_8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/b1"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="For the Big Mac sauce, combine all the ingredients in a bowl, season with salt and chill until ready to use." />
+
+    <TextView
+        android:id="@+id/b2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        android:text="&#8226;"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/t1" />
+
+    <TextView
+        android:id="@+id/t2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimens_16dp"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        android:lineSpacingExtra="@dimen/dimens_8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/b2"
+        app:layout_constraintTop_toBottomOf="@id/t1"
+        tools:text="For the Big Mac sauce, combine all the ingredients in a bowl, season with salt and chill until ready to use." />
+
+    <TextView
+        android:id="@+id/b3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        android:text="&#8226;"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/t2" />
+
+    <TextView
+        android:id="@+id/t3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimens_16dp"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        android:lineSpacingExtra="@dimen/dimens_8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/b3"
+        app:layout_constraintTop_toBottomOf="@id/t2"
+        tools:text="For the Big Mac sauce, combine all the ingredients in a bowl, season with salt and chill until ready to use." />
+
+    <TextView
+        android:id="@+id/b4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        android:text="&#8226;"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/t3" />
+
+    <TextView
+        android:id="@+id/t4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimens_16dp"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        android:lineSpacingExtra="@dimen/dimens_8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/b4"
+        app:layout_constraintTop_toBottomOf="@id/t3"
+        tools:text="For the Big Mac sauce, combine all the ingredients in a bowl, season with salt and chill until ready to use." />
+
+    <TextView
+        android:id="@+id/b5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        android:text="&#8226;"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/t4" />
+
+    <TextView
+        android:id="@+id/t5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimens_16dp"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        android:lineSpacingExtra="@dimen/dimens_8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/b5"
+        app:layout_constraintTop_toBottomOf="@id/t4"
+        tools:text="For the Big Mac sauce, combine all the ingredients in a bowl, season with salt and chill until ready to use." />
+
+    <TextView
+        android:id="@+id/b6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        android:text="&#8226;"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/t5" />
+
+    <TextView
+        android:id="@+id/t6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimens_16dp"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        android:lineSpacingExtra="@dimen/dimens_8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/b6"
+        app:layout_constraintTop_toBottomOf="@id/t5"
+        tools:text="For the Big Mac sauce, combine all the ingredients in a bowl, season with salt and chill until ready to use." />
+
+    <TextView
+        android:id="@+id/b7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        android:text="&#8226;"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/t6" />
+
+    <TextView
+        android:id="@+id/t7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimens_16dp"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        android:lineSpacingExtra="@dimen/dimens_8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/b7"
+        app:layout_constraintTop_toBottomOf="@id/t6"
+        tools:text="For the Big Mac sauce, combine all the ingredients in a bowl, season with salt and chill until ready to use." />
+
+    <TextView
+        android:id="@+id/b8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        android:text="&#8226;"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/t7" />
+
+    <TextView
+        android:id="@+id/t8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimens_16dp"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        android:lineSpacingExtra="@dimen/dimens_8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/b8"
+        app:layout_constraintTop_toBottomOf="@id/t7"
+        tools:text="For the Big Mac sauce, combine all the ingredients in a bowl, season with salt and chill until ready to use." />
+
+    <TextView
+        android:id="@+id/b9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        android:text="&#8226;"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/t8" />
+
+    <TextView
+        android:id="@+id/t9"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimens_16dp"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        android:lineSpacingExtra="@dimen/dimens_8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/b9"
+        app:layout_constraintTop_toBottomOf="@id/t8"
+        tools:text="For the Big Mac sauce, combine all the ingredients in a bowl, season with salt and chill until ready to use." />
+
+    <TextView
+        android:id="@+id/b10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        android:text="&#8226;"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/t9" />
+
+    <TextView
+        android:id="@+id/t10"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimens_16dp"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        android:lineSpacingExtra="@dimen/dimens_8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/b10"
+        app:layout_constraintTop_toBottomOf="@id/t9"
+        tools:text="For the Big Mac sauce, combine all the ingredients in a bowl, season with salt and chill until ready to use." />
+
+    <TextView
+        android:id="@+id/b11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        android:text="&#8226;"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/t10" />
+
+    <TextView
+        android:id="@+id/t11"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimens_16dp"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        android:lineSpacingExtra="@dimen/dimens_8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/b11"
+        app:layout_constraintTop_toBottomOf="@id/t10"
+        tools:text="For the Big Mac sauce, combine all the ingredients in a bowl, season with salt and chill until ready to use." />
+
+    <TextView
+        android:id="@+id/b12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        android:text="&#8226;"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/t11" />
+
+    <TextView
+        android:id="@+id/t12"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimens_16dp"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        android:lineSpacingExtra="@dimen/dimens_8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/b12"
+        app:layout_constraintTop_toBottomOf="@id/t11"
+        tools:text="For the Big Mac sauce, combine all the ingredients in a bowl, season with salt and chill until ready to use." />
+
+    <TextView
+        android:id="@+id/b13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        android:text="&#8226;"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/t12" />
+
+    <TextView
+        android:id="@+id/t13"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimens_16dp"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        android:lineSpacingExtra="@dimen/dimens_8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/b13"
+        app:layout_constraintTop_toBottomOf="@id/t12"
+        tools:text="For the Big Mac sauce, combine all the ingredients in a bowl, season with salt and chill until ready to use." />
+</androidx.constraintlayout.widget.ConstraintLayout>

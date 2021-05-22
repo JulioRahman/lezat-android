@@ -1,4 +1,4 @@
-package com.kencur.lezat
+package com.kencur.lezat.ui
 
 import android.os.Bundle
 import android.view.Menu
@@ -9,6 +9,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.kencur.lezat.R
 import com.kencur.lezat.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

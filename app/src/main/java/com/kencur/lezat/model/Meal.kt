@@ -1,4 +1,4 @@
-package com.kencur.lezat
+package com.kencur.lezat.model
 
 import android.os.Parcelable
 import androidx.annotation.Keep

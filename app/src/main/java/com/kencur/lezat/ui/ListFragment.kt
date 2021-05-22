@@ -1,32 +1,31 @@
-package com.kencur.lezat
+package com.kencur.lezat.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.navArgs
-import com.kencur.lezat.databinding.FragmentDetailBinding
+import androidx.navigation.fragment.findNavController
+import com.kencur.lezat.databinding.FragmentListBinding
+import com.kencur.lezat.utils.MealContent
 
 /**
- * A simple [Fragment] subclass as the second destination in the navigation.
+ * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class DetailFragment : Fragment() {
+class ListFragment : Fragment() {
 
-    private var _binding: FragmentDetailBinding? = null
+    private var _binding: FragmentListBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-    private val args: DetailFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentDetailBinding.inflate(inflater, container, false)
-        binding.tvText.text = args.mealArg.toString()
+        _binding = FragmentListBinding.inflate(inflater, container, false)
         return binding.root
 
     }
@@ -34,6 +33,11 @@ class DetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.buttonFirst.setOnClickListener {
+            val meal = MealContent.MEAL[0]
+            val action = ListFragmentDirections.actionListToDetail(meal)
+            findNavController().navigate(action)
+        }
     }
 
     override fun onDestroyView() {

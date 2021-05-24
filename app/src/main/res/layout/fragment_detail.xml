@@ -23,14 +23,15 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Title" />
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardImg"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="@dimen/dimens_32dp"
             app:cardCornerRadius="@dimen/dimens_32dp"
             app:cardElevation="0dp"
+            app:layout_constraintDimensionRatio="H,1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/guideline"
             app:layout_constraintTop_toBottomOf="@id/tvTitle">
@@ -38,72 +39,65 @@
             <ImageView
                 android:id="@+id/ivMeal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:scaleType="fitStart"
-                android:src="@drawable/img" />
-        </androidx.cardview.widget.CardView>
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@color/colorGray"
+                tools:ignore="ContentDescription"
+                tools:src="@color/colorPrimary" />
+        </com.google.android.material.card.MaterialCardView>
 
-        <TextView
-            android:id="@+id/text_2"
-            android:layout_width="0dp"
+        <ImageView
+            android:id="@+id/iv_1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dimens_32dp"
-            android:layout_marginTop="@dimen/dimens_32dp"
-            android:layout_marginEnd="@dimen/dimens_16dp"
-            android:ellipsize="end"
-            android:lines="1"
-            android:text="Category"
-            app:layout_constraintBottom_toTopOf="@id/tvCategory"
-            app:layout_constraintEnd_toStartOf="@id/guideline"
+            android:src="@drawable/ic_category"
+            app:layout_constraintBottom_toBottomOf="@id/tvCategory"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/cardImg"
-            app:layout_constraintVertical_chainStyle="packed" />
+            app:layout_constraintTop_toTopOf="@id/tvCategory"
+            app:tint="@color/colorPrimary" />
 
         <TextView
             android:id="@+id/tvCategory"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dimens_32dp"
+            android:layout_marginStart="@dimen/dimens_8dp"
+            android:layout_marginTop="@dimen/dimens_32dp"
             android:layout_marginEnd="@dimen/dimens_16dp"
             android:ellipsize="end"
             android:lines="1"
-            android:textSize="@dimen/size_20sp"
-            app:layout_constraintBottom_toTopOf="@id/text_3"
-            app:layout_constraintEnd_toStartOf="@id/guideline"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_2"
-            tools:text="Category" />
-
-        <TextView
-            android:id="@+id/text_3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dimens_32dp"
-            android:layout_marginTop="@dimen/dimens_16dp"
-            android:layout_marginEnd="@dimen/dimens_16dp"
-            android:ellipsize="end"
-            android:lines="1"
-            android:text="Area"
             app:layout_constraintBottom_toTopOf="@id/tvArea"
             app:layout_constraintEnd_toStartOf="@id/guideline"
+            app:layout_constraintStart_toEndOf="@id/iv_1"
+            app:layout_constraintTop_toTopOf="@id/cardImg"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Category" />
+
+        <ImageView
+            android:id="@+id/iv_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimens_32dp"
+            android:src="@drawable/ic_place"
+            app:layout_constraintBottom_toBottomOf="@id/tvArea"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvCategory" />
+            app:layout_constraintTop_toTopOf="@id/tvArea"
+            app:tint="@color/colorPrimary" />
 
         <TextView
             android:id="@+id/tvArea"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dimens_32dp"
+            android:layout_marginStart="@dimen/dimens_8dp"
+            android:layout_marginTop="@dimen/dimens_32dp"
             android:layout_marginEnd="@dimen/dimens_16dp"
             android:layout_marginBottom="@dimen/dimens_32dp"
             android:ellipsize="end"
             android:lines="1"
-            android:textSize="@dimen/size_20sp"
             app:layout_constraintBottom_toBottomOf="@id/cardImg"
             app:layout_constraintEnd_toStartOf="@id/guideline"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_3"
+            app:layout_constraintStart_toEndOf="@id/iv_2"
+            app:layout_constraintTop_toBottomOf="@id/tvCategory"
             tools:text="Area" />
 
         <androidx.constraintlayout.widget.Guideline

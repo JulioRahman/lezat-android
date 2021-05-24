@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/ListFragment"
         android:name="com.kencur.lezat.ui.ListFragment"
-        android:label="@string/list_fragment_label"
+        android:label=""
         tools:layout="@layout/fragment_list">
 
         <action

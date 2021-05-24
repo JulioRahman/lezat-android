@@ -1,9 +1,6 @@
 package com.kencur.lezat.ui
 
 import android.os.Bundle
-import android.text.Spannable
-import android.text.SpannableString
-import android.text.style.StyleSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +9,7 @@ import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.kencur.lezat.databinding.FragmentDetailBinding
+import com.kencur.lezat.utils.ViewUtil
 import com.kencur.lezat.utils.hide
 
 /**
@@ -37,7 +35,7 @@ class DetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setTitle(args.mealArg.strMeal)
+        ViewUtil.setMealTitle(args.mealArg.strMeal, binding.tvTitle)
         binding.tvCategory.text = args.mealArg.strCategory
         binding.tvArea.text = args.mealArg.strArea
         setInstructions(args.mealArg.strInstructions)
@@ -56,7 +54,7 @@ class DetailFragment : Fragment() {
             _binding?.let {
                 val height = binding.root.height - binding.cardImg.top
                 if (height - 256 > 256)
-                binding.bsInstructions.bottomSheet.layoutParams.height = height
+                    binding.bsInstructions.bottomSheet.layoutParams.height = height
             }
         }
 
@@ -68,22 +66,6 @@ class DetailFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    private fun setTitle(txt: String) {
-        if (txt.trim().contains(' ')) {
-            val spannable: Spannable = SpannableString(txt)
-            val iSpace = txt.indexOf(' ')
-            spannable.setSpan(
-                StyleSpan(android.graphics.Typeface.BOLD),
-                iSpace,
-                txt.length,
-                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
-            )
-
-            binding.tvTitle.text = spannable
-        } else
-            binding.tvTitle.text = txt
     }
 
     private fun setInstructions(list: List<String>) {

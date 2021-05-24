@@ -12,7 +12,7 @@
     <View
         android:id="@+id/handle"
         android:layout_width="@dimen/dimens_128dp"
-        android:layout_height="@dimen/dimens_8dp"
+        android:layout_height="@dimen/dimens_6dp"
         android:layout_marginTop="@dimen/dimens_16dp"
         android:background="@drawable/handle"
         app:layout_constraintEnd_toEndOf="parent"

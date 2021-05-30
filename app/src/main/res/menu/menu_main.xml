@@ -5,6 +5,7 @@
 
     <item
         android:id="@+id/action_about"
+        android:contentDescription="@string/action_about"
         android:icon="@drawable/ic_person"
         android:iconTint="@color/colorOnSecondary"
         android:title="@string/action_about"

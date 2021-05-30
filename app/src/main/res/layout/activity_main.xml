@@ -19,10 +19,171 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorBackground"
             android:padding="@dimen/dimens_16dp"
+            app:menu="@menu/menu_main"
             app:titleMarginStart="@dimen/dimens_16dp" />
-
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimens_32dp"
+                android:fontFamily="@font/newsreader"
+                android:text="Lezat"
+                android:textSize="@dimen/size_32sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.kencur.lezat.utils.VerticalTextView
+                android:id="@+id/text_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_24dp"
+                android:gravity="bottom"
+                android:paddingHorizontal="@dimen/dimens_16dp"
+                android:paddingVertical="@dimen/dimens_8dp"
+                android:text="Beef"
+                app:layout_constraintBottom_toTopOf="@id/text_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/list"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/b1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#11044;"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/size_10sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/text_1"
+                app:layout_constraintStart_toEndOf="@id/text_1"
+                app:layout_constraintTop_toTopOf="@id/text_1" />
+
+            <com.kencur.lezat.utils.VerticalTextView
+                android:id="@+id/text_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_24dp"
+                android:gravity="bottom"
+                android:paddingHorizontal="@dimen/dimens_16dp"
+                android:paddingVertical="@dimen/dimens_8dp"
+                android:text="Chicken"
+                app:layout_constraintBottom_toTopOf="@id/text_3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_1" />
+
+            <TextView
+                android:id="@+id/b2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#11044;"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/size_10sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/text_2"
+                app:layout_constraintStart_toEndOf="@id/text_2"
+                app:layout_constraintTop_toTopOf="@id/text_2" />
+
+            <com.kencur.lezat.utils.VerticalTextView
+                android:id="@+id/text_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_24dp"
+                android:gravity="bottom"
+                android:paddingHorizontal="@dimen/dimens_16dp"
+                android:paddingVertical="@dimen/dimens_8dp"
+                android:text="Dessert"
+                app:layout_constraintBottom_toTopOf="@id/text_4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_2" />
+
+            <TextView
+                android:id="@+id/b3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#11044;"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/size_10sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/text_3"
+                app:layout_constraintStart_toEndOf="@id/text_3"
+                app:layout_constraintTop_toTopOf="@id/text_3" />
+
+            <com.kencur.lezat.utils.VerticalTextView
+                android:id="@+id/text_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_24dp"
+                android:gravity="bottom"
+                android:paddingHorizontal="@dimen/dimens_16dp"
+                android:paddingVertical="@dimen/dimens_8dp"
+                android:text="Pork"
+                app:layout_constraintBottom_toTopOf="@id/text_5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_3" />
+
+            <TextView
+                android:id="@+id/b4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#11044;"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/size_10sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/text_4"
+                app:layout_constraintStart_toEndOf="@id/text_4"
+                app:layout_constraintTop_toTopOf="@id/text_4" />
+
+            <com.kencur.lezat.utils.VerticalTextView
+                android:id="@+id/text_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_24dp"
+                android:gravity="bottom"
+                android:paddingHorizontal="@dimen/dimens_16dp"
+                android:paddingVertical="@dimen/dimens_8dp"
+                android:text="Vegetarian"
+                app:layout_constraintBottom_toBottomOf="@id/list"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_4" />
+
+            <TextView
+                android:id="@+id/b5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#11044;"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/size_10sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/text_5"
+                app:layout_constraintStart_toEndOf="@id/text_5"
+                app:layout_constraintTop_toTopOf="@id/text_5" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimens_16dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/dimens_72dp"
+                android:paddingEnd="@dimen/dimens_16dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                tools:listitem="@layout/item_meal" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

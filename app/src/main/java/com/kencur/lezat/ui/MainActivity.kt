@@ -1,12 +1,15 @@
 package com.kencur.lezat.ui
 
 import android.annotation.SuppressLint
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import android.view.MotionEvent
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.kencur.lezat.R
+import com.kencur.lezat.adapter.AreaAdapter
 import com.kencur.lezat.adapter.MealAdapter
 import com.kencur.lezat.databinding.ActivityMainBinding
 import com.kencur.lezat.utils.MealContent
@@ -16,7 +19,9 @@ import com.kencur.lezat.utils.show
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var adapter: MealAdapter
+    private lateinit var mealAdapter: MealAdapter
+    private lateinit var areaAdapter: AreaAdapter
+    private lateinit var defaultTextColors: ColorStateList
     private var isClickValid = false
     private var actionDownXY = IntArray(2)
     private var categoryState = CategoryState.NONE
@@ -27,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val mealContent = MealContent.MEAL.shuffled()
+        defaultTextColors = binding.text1.textColors
 
         binding.toolbar.setOnMenuItemClickListener { item ->
             when (item.itemId) {
@@ -39,9 +45,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        adapter = MealAdapter(mealContent)
-        binding.list.adapter = adapter
-        filterList()
+        mealAdapter = MealAdapter(mealContent)
+        binding.list.adapter = mealAdapter
+
+        areaAdapter = AreaAdapter(mealContent.map { it.objArea }.groupBy { it.strName }
+            .map { it.value.first() }, mealAdapter, defaultTextColors)
+        binding.listArea.adapter = areaAdapter
 
         // Dispatch click trough view behind the recyclerview
         binding.list.setOnTouchListener { _, event ->
@@ -53,7 +62,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 MotionEvent.ACTION_MOVE -> isClickValid = false
                 MotionEvent.ACTION_UP -> {
-                    if (isClickValid)
+                    if (isClickValid) {
                         getCategoryViews().forEach { tv ->
                             val tvLoc = IntArray(2)
                             tv.getLocationOnScreen(tvLoc)
@@ -67,6 +76,7 @@ class MainActivity : AppCompatActivity() {
                                 return@setOnTouchListener false
                             }
                         }
+                    }
                 }
             }
 
@@ -88,17 +98,22 @@ class MainActivity : AppCompatActivity() {
 
     private fun changeCategoryState(newState: CategoryState) {
         val bNew = getCategoryBulletViews()[newState.ordinal]
+        val tvNew = getCategoryViews()[newState.ordinal]
 
         categoryState = if (categoryState == newState) {
             bNew.hide()
+            tvNew.setTextColor(defaultTextColors)
             CategoryState.NONE
         } else {
             if (categoryState != CategoryState.NONE) {
                 val bOld = getCategoryBulletViews()[categoryState.ordinal]
+                val tvOld = getCategoryViews()[categoryState.ordinal]
 
                 bOld.hide()
+                tvOld.setTextColor(defaultTextColors)
             }
             bNew.show()
+            tvNew.setTextColor(Color.BLACK)
             newState
         }
 
@@ -107,9 +122,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun filterList() {
         if (categoryState != CategoryState.NONE) {
-            adapter.filter.filter(getCategoryViews()[categoryState.ordinal].text.toString())
+            mealAdapter.filterCategory(getCategoryViews()[categoryState.ordinal].text.toString())
         } else
-            adapter.filter.filter("")
+            mealAdapter.filterCategory("")
     }
 
     private fun getCategoryViews(): List<TextView> {

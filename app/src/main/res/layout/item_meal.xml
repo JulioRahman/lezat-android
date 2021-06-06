@@ -10,11 +10,30 @@
         android:id="@+id/viewBg"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/colorBackground"
+        android:background="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/itemList"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Data"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/rounded_stroke"
+        app:layout_constraintBottom_toBottomOf="@id/itemList"
+        app:layout_constraintEnd_toEndOf="@id/itemList"
+        app:layout_constraintStart_toStartOf="@id/itemList"
+        app:layout_constraintTop_toTopOf="@id/itemList" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/itemList"
@@ -33,6 +52,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorBackground"
             android:paddingBottom="@dimen/dimens_32dp">
 
             <com.google.android.material.card.MaterialCardView
@@ -61,12 +81,13 @@
                 android:fontFamily="@font/newsreader"
                 android:gravity="center"
                 android:lines="2"
-                android:text="Title Titleee"
                 android:textAlignment="center"
+                android:textColor="@android:color/black"
                 android:textSize="@dimen/size_24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cardImg" />
+                app:layout_constraintTop_toBottomOf="@id/cardImg"
+                tools:text="Title Titleee" />
 
             <ImageView
                 android:id="@+id/iv_1"

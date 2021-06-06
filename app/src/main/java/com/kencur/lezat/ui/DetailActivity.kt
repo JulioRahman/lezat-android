@@ -1,5 +1,6 @@
 package com.kencur.lezat.ui
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
@@ -26,7 +27,7 @@ class DetailActivity : AppCompatActivity() {
         meal?.let {
             ViewUtil.setMealTitle(meal.strMeal, binding.tvTitle)
             binding.tvCategory.text = meal.strCategory
-            binding.tvArea.text = meal.strArea
+            binding.tvArea.text = meal.objArea.strName
             setInstructions(meal.strInstructions)
 
             val bsBehavior = BottomSheetBehavior.from(binding.bsInstructions.bottomSheet)
@@ -43,7 +44,9 @@ class DetailActivity : AppCompatActivity() {
                     binding.bsInstructions.bottomSheet.layoutParams.height = height
             }
 
-            val shimmer = Shimmer.ColorHighlightBuilder().build()
+            val shimmer = Shimmer.ColorHighlightBuilder()
+                .setBaseColor(Color.parseColor("#DDDDDD"))
+                .build()
 
             val shimmerDrawable = ShimmerDrawable().apply {
                 setShimmer(shimmer)

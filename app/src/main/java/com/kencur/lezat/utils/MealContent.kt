@@ -1,5 +1,6 @@
 package com.kencur.lezat.utils
 
+import com.kencur.lezat.model.Area
 import com.kencur.lezat.model.Meal
 
 object MealContent {
@@ -12,7 +13,11 @@ object MealContent {
                 Meal(
                     "Pumpkin Pie",
                     "Dessert",
-                    "American",
+                    Area(
+                        "American",
+                        "US",
+                        false
+                    ),
                     listOf(
                         "Place the pumpkin in a large saucepan, cover with water and bring to the boil.",
                         "Cover with a lid and simmer for 15 mins or until tender.",
@@ -40,7 +45,11 @@ object MealContent {
                 Meal(
                     "Big Mac",
                     "Beef",
-                    "American",
+                    Area(
+                        "American",
+                        "US",
+                        false
+                    ),
                     listOf(
                         "For the Big Mac sauce, combine all the ingredients in a bowl, season with salt and chill until ready to use.",
                         "To make the patties, season the mince with salt and pepper and form into 4 balls using about 1/3 cup mince each.",
@@ -63,7 +72,11 @@ object MealContent {
                 Meal(
                     "Beef Rendang",
                     "Beef",
-                    "Malaysian",
+                    Area(
+                        "Malaysian",
+                        "MY",
+                        false
+                    ),
                     listOf(
                         "Chop the spice paste ingredients and then blend it in a food processor until fine.",
                         "Heat the oil in a stew pot, add the spice paste, cinnamon, cloves, star anise, and cardamom and stir-fry until aromatic.",
@@ -81,7 +94,11 @@ object MealContent {
                 Meal(
                     "Chicken Karaage",
                     "Chicken",
-                    "Japanese",
+                    Area(
+                        "Japanese",
+                        "JP",
+                        false
+                    ),
                     listOf(
                         "Add the ginger, garlic, soy sauce, sake and sugar to a bowl and whisk to combine.",
                         "Add the chicken, then stir to coat evenly.",
@@ -102,7 +119,11 @@ object MealContent {
                 Meal(
                     "Japanese Katsudon",
                     "Pork",
-                    "Japanese",
+                    Area(
+                        "Japanese",
+                        "JP",
+                        false
+                    ),
                     listOf(
                         "Heat the oil in a pan, fry the sliced onion until golden brown, then add the tonkatsu, placing it in the middle of the pan.",
                         "Mix the dashi, soy, mirin and sugar together and tip three-quarters of the mixture around the tonkatsu.",
@@ -117,7 +138,11 @@ object MealContent {
                 Meal(
                     "Yaki Udon",
                     "Vegetarian",
-                    "Japanese",
+                    Area(
+                        "Japanese",
+                        "JP",
+                        false
+                    ),
                     listOf(
                         "Boil some water in a large saucepan.",
                         "Add 250ml cold water and the udon noodles. (As they are so thick, adding cold water helps them to cook a little bit slower so the middle cooks through).",
@@ -136,7 +161,11 @@ object MealContent {
                 Meal(
                     "Matar Paneer",
                     "Vegetarian",
-                    "Indian",
+                    Area(
+                        "Indian",
+                        "IN",
+                        false
+                    ),
                     listOf(
                         "Heat the oil in a frying pan over high heat until it’s shimmering hot.",
                         "Add the paneer, then turn the heat down a little.",
@@ -156,7 +185,11 @@ object MealContent {
                 Meal(
                     "Chickpea Fajitas",
                     "Vegetarian",
-                    "Mexican",
+                    Area(
+                        "Mexican",
+                        "MX",
+                        false
+                    ),
                     listOf(
                         "Heat oven to 200\u00B0C/180\u00B0C fan/gas 6 and line a baking tray with foil.",
                         "Drain the chickpeas, pat dry and tip onto the prepared baking tray.",
@@ -177,7 +210,11 @@ object MealContent {
                 Meal(
                     "Pancakes",
                     "Dessert",
-                    "American",
+                    Area(
+                        "American",
+                        "US",
+                        false
+                    ),
                     listOf(
                         "Put the flour, eggs, milk, 1 tbsp oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.",
                         "Set aside for 30 mins to rest if you have time, or start cooking straight away.",
@@ -193,7 +230,11 @@ object MealContent {
                 Meal(
                     "Tarte Tatin",
                     "Dessert",
-                    "French",
+                    Area(
+                        "French",
+                        "FR",
+                        false
+                    ),
                     listOf(
                         "Roll the pastry to a 3mm-thick round on a lightly floured surface and cut a 24cm circle, using a plate as a guide.",
                         "Lightly prick all over with a fork, wrap in cling film on a baking sheet and freeze while preparing the apples.",
@@ -217,7 +258,11 @@ object MealContent {
                 Meal(
                     "Chocolate Souffle",
                     "Dessert",
-                    "French",
+                    Area(
+                        "French",
+                        "FR",
+                        false
+                    ),
                     listOf(
                         "Heat oven to 220\u00B0C/fan 200\u00B0C/gas 7 and place a baking tray on the top shelf.",
                         "For the sauce, heat the cream and sugar until boiling.",

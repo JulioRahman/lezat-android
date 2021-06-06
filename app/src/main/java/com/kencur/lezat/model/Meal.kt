@@ -7,14 +7,14 @@ import kotlinx.parcelize.Parcelize
 @Keep
 @Parcelize
 data class Meal(
+
     val strMeal: String,
 
     val strCategory: String,
 
-    val strArea: String,
+    val objArea: Area,
 
     val strInstructions: List<String>,
 
     val strMealThumb: String
-
 ) : Parcelable

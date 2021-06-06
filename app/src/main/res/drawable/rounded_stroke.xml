@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:inset="@dimen/dimens_2dp">
+
+    <shape>
+        <stroke
+            android:width="@dimen/dimens_2dp"
+            android:color="@color/colorGray" />
+
+        <corners android:radius="@dimen/dimens_32dp" />
+    </shape>
+</inset>

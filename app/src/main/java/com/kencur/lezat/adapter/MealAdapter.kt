@@ -9,11 +9,10 @@ import android.widget.Filterable
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.facebook.shimmer.Shimmer
-import com.facebook.shimmer.ShimmerDrawable
 import com.kencur.lezat.databinding.ItemMealBinding
 import com.kencur.lezat.model.Meal
 import com.kencur.lezat.ui.DetailActivity
+import com.kencur.lezat.utils.ShimmerUtil
 import com.kencur.lezat.utils.ViewUtil
 import com.kencur.lezat.utils.invisible
 import com.kencur.lezat.utils.show
@@ -44,15 +43,9 @@ class MealAdapter(private val mealList: List<Meal>) :
                     binding.tvCategory.text = strCategory
                     binding.tvArea.text = objArea.strName
 
-                    val shimmer = Shimmer.ColorHighlightBuilder().build()
-
-                    val shimmerDrawable = ShimmerDrawable().apply {
-                        setShimmer(shimmer)
-                    }
-
                     Glide.with(context)
                         .load(strMealThumb)
-                        .placeholder(shimmerDrawable)
+                        .placeholder(ShimmerUtil.getShimmerDrawable())
                         .into(binding.ivMeal)
 
                     holder.itemView.setOnClickListener {

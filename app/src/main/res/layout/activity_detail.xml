@@ -21,7 +21,7 @@
             android:padding="@dimen/dimens_16dp"
             app:menu="@menu/menu_main"
             app:navigationIcon="@drawable/ic_arrow_back"
-            app:titleMarginStart="@dimen/dimens_16dp" />
+            app:navigationIconTint="?attr/colorControlNormal" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView

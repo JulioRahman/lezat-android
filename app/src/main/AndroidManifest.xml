@@ -24,6 +24,9 @@
         <activity
             android:name=".ui.DetailActivity"
             android:theme="@style/Theme.Lezat.NoActionBar" />
+        <activity
+            android:name=".ui.ProfileActivity"
+            android:theme="@style/Theme.Lezat.NoActionBar" />
 
         <meta-data
             android:name="preloaded_fonts"

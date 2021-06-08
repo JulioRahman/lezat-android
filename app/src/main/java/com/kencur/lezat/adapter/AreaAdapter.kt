@@ -9,11 +9,10 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.facebook.shimmer.Shimmer
-import com.facebook.shimmer.ShimmerDrawable
 import com.kencur.lezat.R
 import com.kencur.lezat.databinding.ItemAreaBinding
 import com.kencur.lezat.model.Area
+import com.kencur.lezat.utils.ShimmerUtil
 
 class AreaAdapter(
     private val areaList: List<Area>,
@@ -34,15 +33,9 @@ class AreaAdapter(
             with(areaList[position]) {
                 binding.tvArea.text = strName
 
-                val shimmer = Shimmer.ColorHighlightBuilder().build()
-
-                val shimmerDrawable = ShimmerDrawable().apply {
-                    setShimmer(shimmer)
-                }
-
                 Glide.with(context)
                     .load("https://www.countryflags.io/${strCode.lowercase()}/flat/64.png")
-                    .placeholder(shimmerDrawable)
+                    .placeholder(ShimmerUtil.getShimmerDrawable())
                     .into(binding.ivArea)
 
                 binding.root.setOnClickListener {

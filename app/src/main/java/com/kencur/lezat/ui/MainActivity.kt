@@ -1,12 +1,12 @@
 package com.kencur.lezat.ui
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
 import android.view.MotionEvent
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.kencur.lezat.R
 import com.kencur.lezat.adapter.AreaAdapter
@@ -37,8 +37,7 @@ class MainActivity : AppCompatActivity() {
         binding.toolbar.setOnMenuItemClickListener { item ->
             when (item.itemId) {
                 R.id.action_about -> {
-                    Toast.makeText(this, getString(R.string.action_about), Toast.LENGTH_SHORT)
-                        .show()
+                    startActivity(Intent(this, ProfileActivity::class.java))
                     true
                 }
                 else -> false

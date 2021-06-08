@@ -1,14 +1,14 @@
 package com.kencur.lezat.ui
 
-import android.graphics.Color
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.facebook.shimmer.Shimmer
-import com.facebook.shimmer.ShimmerDrawable
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.kencur.lezat.R
 import com.kencur.lezat.databinding.ActivityDetailBinding
 import com.kencur.lezat.model.Meal
+import com.kencur.lezat.utils.ShimmerUtil
 import com.kencur.lezat.utils.ViewUtil
 import com.kencur.lezat.utils.hide
 
@@ -22,6 +22,16 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.toolbar.setNavigationOnClickListener { onBackPressed() }
+
+        binding.toolbar.setOnMenuItemClickListener { item ->
+            when (item.itemId) {
+                R.id.action_about -> {
+                    startActivity(Intent(this, ProfileActivity::class.java))
+                    true
+                }
+                else -> false
+            }
+        }
 
         val meal = intent.getParcelableExtra<Meal>(EXTRA_DATA)
         meal?.let {
@@ -44,17 +54,9 @@ class DetailActivity : AppCompatActivity() {
                     binding.bsInstructions.bottomSheet.layoutParams.height = height
             }
 
-            val shimmer = Shimmer.ColorHighlightBuilder()
-                .setBaseColor(Color.parseColor("#DDDDDD"))
-                .build()
-
-            val shimmerDrawable = ShimmerDrawable().apply {
-                setShimmer(shimmer)
-            }
-
             Glide.with(this)
                 .load(meal.strMealThumb)
-                .placeholder(shimmerDrawable)
+                .placeholder(ShimmerUtil.getShimmerDrawable())
                 .into(binding.ivMeal)
         } ?: run {
             onBackPressed()

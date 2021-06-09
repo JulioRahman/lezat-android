@@ -1,11 +1,9 @@
 package com.kencur.lezat.ui
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.kencur.lezat.R
 import com.kencur.lezat.databinding.ActivityDetailBinding
 import com.kencur.lezat.model.Meal
 import com.kencur.lezat.utils.ShimmerUtil
@@ -15,6 +13,7 @@ import com.kencur.lezat.utils.hide
 class DetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailBinding
+    private lateinit var bsBehavior: BottomSheetBehavior<*>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,16 +22,6 @@ class DetailActivity : AppCompatActivity() {
 
         binding.toolbar.setNavigationOnClickListener { onBackPressed() }
 
-        binding.toolbar.setOnMenuItemClickListener { item ->
-            when (item.itemId) {
-                R.id.action_about -> {
-                    startActivity(Intent(this, ProfileActivity::class.java))
-                    true
-                }
-                else -> false
-            }
-        }
-
         val meal = intent.getParcelableExtra<Meal>(EXTRA_DATA)
         meal?.let {
             ViewUtil.setMealTitle(meal.strMeal, binding.tvTitle)
@@ -40,7 +29,7 @@ class DetailActivity : AppCompatActivity() {
             binding.tvArea.text = meal.objArea.strName
             setInstructions(meal.strInstructions)
 
-            val bsBehavior = BottomSheetBehavior.from(binding.bsInstructions.bottomSheet)
+            bsBehavior = BottomSheetBehavior.from(binding.bsInstructions.bottomSheet)
             binding.barrier.viewTreeObserver.addOnGlobalLayoutListener {
                 val peekHeight = binding.nsv.height - binding.barrier.top - 128
                 if (peekHeight - 72 > 72)
@@ -61,6 +50,13 @@ class DetailActivity : AppCompatActivity() {
         } ?: run {
             onBackPressed()
         }
+    }
+
+    override fun onBackPressed() {
+        if (bsBehavior.state == BottomSheetBehavior.STATE_COLLAPSED)
+            super.onBackPressed()
+        else
+            bsBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
     }
 
     private fun setInstructions(list: List<String>) {

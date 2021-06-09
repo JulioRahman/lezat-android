@@ -59,6 +59,7 @@
                 android:id="@+id/cardImg"
                 android:layout_width="@dimen/dimens_200dp"
                 android:layout_height="@dimen/dimens_200dp"
+                android:transitionName="card"
                 app:cardCornerRadius="@dimen/dimens_32dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

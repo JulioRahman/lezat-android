@@ -1,6 +1,7 @@
 package com.kencur.lezat.ui
 
 import android.annotation.SuppressLint
+import android.app.ActivityOptions
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
@@ -37,7 +38,10 @@ class MainActivity : AppCompatActivity() {
         binding.toolbar.setOnMenuItemClickListener { item ->
             when (item.itemId) {
                 R.id.action_about -> {
-                    startActivity(Intent(this, ProfileActivity::class.java))
+                    startActivity(
+                        Intent(this, ProfileActivity::class.java),
+                        ActivityOptions.makeSceneTransitionAnimation(this).toBundle()
+                    )
                     true
                 }
                 else -> false

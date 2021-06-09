@@ -19,7 +19,6 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorBackground"
             android:padding="@dimen/dimens_16dp"
-            app:menu="@menu/menu_main"
             app:navigationIcon="@drawable/ic_arrow_back"
             app:navigationIconTint="?attr/colorControlNormal" />
     </com.google.android.material.appbar.AppBarLayout>
@@ -54,6 +53,7 @@
                 android:layout_height="0dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="@dimen/dimens_32dp"
+                android:transitionName="card"
                 app:cardCornerRadius="@dimen/dimens_32dp"
                 app:cardElevation="0dp"
                 app:layout_constraintDimensionRatio="H,1:1"

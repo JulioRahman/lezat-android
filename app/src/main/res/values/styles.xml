@@ -14,6 +14,16 @@
         <!-- Customize your theme here. -->
 
         <item name="android:fontFamily">@font/montserrat</item>
+
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowEnterTransition">@transition/fade</item>
+        <item name="android:windowExitTransition">@transition/fade</item>
+        <item name="android:windowSharedElementEnterTransition">
+            @transition/list_detail_transition
+        </item>
+        <item name="android:windowSharedElementExitTransition">
+            @transition/list_detail_transition
+        </item>
     </style>
 
     <style name="Theme.Lezat.NoActionBar">

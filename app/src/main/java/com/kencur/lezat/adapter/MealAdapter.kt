@@ -1,7 +1,10 @@
 package com.kencur.lezat.adapter
 
+import android.app.Activity
+import android.app.ActivityOptions
 import android.content.Intent
 import android.graphics.Color
+import android.util.Pair
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Filter
@@ -55,7 +58,11 @@ class MealAdapter(private val mealList: List<Meal>) :
                     holder.binding.itemList.setOnClickListener {
                         context.startActivity(
                             Intent(context, DetailActivity::class.java)
-                                .putExtra(DetailActivity.EXTRA_DATA, this)
+                                .putExtra(DetailActivity.EXTRA_DATA, this),
+                            ActivityOptions.makeSceneTransitionAnimation(
+                                context as Activity,
+                                Pair.create(binding.cardImg, "card")
+                            ).toBundle()
                         )
                     }
 

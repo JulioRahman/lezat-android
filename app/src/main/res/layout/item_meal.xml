@@ -16,15 +16,27 @@
         app:layout_constraintStart_toStartOf="@id/itemList"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/icon_1"
+        android:layout_width="@dimen/dimens_64dp"
+        android:layout_height="@dimen/dimens_64dp"
+        android:layout_marginBottom="@dimen/dimens_16dp"
+        android:src="@drawable/ic_error"
+        app:layout_constraintBottom_toTopOf="@id/text_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
     <TextView
         android:id="@+id/text_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No Data"
+        android:text="@string/no_data"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/icon_1" />
 
     <View
         android:layout_width="0dp"
@@ -99,7 +111,8 @@
                 app:layout_constraintBottom_toBottomOf="@id/tvCategory"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/tvCategory"
-                app:tint="@color/colorPrimary" />
+                app:tint="@color/colorPrimary"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/tvCategory"
@@ -126,7 +139,8 @@
                 app:layout_constraintBottom_toBottomOf="@id/tvArea"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/tvArea"
-                app:tint="@color/colorPrimary" />
+                app:tint="@color/colorPrimary"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/tvArea"

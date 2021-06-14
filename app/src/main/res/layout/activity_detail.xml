@@ -80,7 +80,8 @@
                 app:layout_constraintBottom_toBottomOf="@id/tvCategory"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/tvCategory"
-                app:tint="@color/colorPrimary" />
+                app:tint="@color/colorPrimary"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/tvCategory"
@@ -107,7 +108,8 @@
                 app:layout_constraintBottom_toBottomOf="@id/tvArea"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/tvArea"
-                app:tint="@color/colorPrimary" />
+                app:tint="@color/colorPrimary"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/tvArea"

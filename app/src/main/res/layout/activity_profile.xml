@@ -34,7 +34,8 @@
                     android:src="@drawable/profile"
                     app:layout_constraintBottom_toTopOf="@id/img_2"
                     app:layout_constraintDimensionRatio="H,1:1"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
 
                 <com.kencur.lezat.utils.BottomCropImageView
                     android:id="@+id/img_2"
@@ -61,7 +62,8 @@
                 android:layout_marginTop="@dimen/dimens_24dp"
                 app:backgroundTint="@color/colorBackground"
                 app:elevation="0dp"
-                app:layout_collapseMode="pin" />
+                app:layout_collapseMode="pin"
+                tools:ignore="ContentDescription" />
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/toolbar"
@@ -70,6 +72,8 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:padding="@dimen/dimens_16dp"
+                android:paddingStart="@dimen/dimens_16dp"
+                android:paddingEnd="@dimen/dimens_16dp"
                 app:layout_collapseMode="pin"
                 app:navigationIcon="@drawable/ic_arrow_back"
                 app:navigationIconTint="?attr/colorControlNormal" />
@@ -93,10 +97,10 @@
                 android:layout_marginEnd="@dimen/dimens_16dp"
                 android:ellipsize="end"
                 android:lines="1"
-                android:text="Julio Rahman"
+                android:text="@string/julio_name"
                 android:textColor="@color/colorOnSecondary"
                 android:textSize="@dimen/size_32sp"
-                app:layout_constraintEnd_toStartOf="@id/btn_instagram"
+                app:layout_constraintEnd_toStartOf="@id/img_profile"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -108,13 +112,13 @@
                 android:layout_marginEnd="@dimen/dimens_16dp"
                 android:ellipsize="end"
                 android:lines="1"
-                android:text="julio.rahman@gmail.com"
-                app:layout_constraintEnd_toStartOf="@id/btn_instagram"
+                android:text="@string/julio_email"
+                app:layout_constraintEnd_toStartOf="@id/img_profile"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/text_1" />
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/btn_instagram"
+                android:id="@+id/img_profile"
                 android:layout_width="@dimen/dimens_64dp"
                 android:layout_height="@dimen/dimens_64dp"
                 android:layout_marginEnd="@dimen/dimens_24dp"
@@ -128,10 +132,12 @@
                 <ImageView
                     android:id="@+id/img_avatar"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/avatar" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/list_profile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dimens_16dp"
@@ -175,7 +181,8 @@
                                     android:layout_height="match_parent"
                                     android:layout_margin="@dimen/dimens_4dp"
                                     android:src="@drawable/ic_instagram"
-                                    app:tint="@android:color/white" />
+                                    app:tint="@android:color/white"
+                                    tools:ignore="ContentDescription" />
                             </com.google.android.material.card.MaterialCardView>
 
                             <TextView
@@ -185,7 +192,7 @@
                                 android:layout_marginStart="@dimen/dimens_16dp"
                                 android:layout_marginTop="@dimen/dimens_32dp"
                                 android:layout_marginEnd="@dimen/dimens_32dp"
-                                android:text="Find Me on Instagram!"
+                                android:text="@string/instagram_title"
                                 android:textSize="@dimen/size_18sp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toEndOf="@id/mcv_1"
@@ -198,7 +205,7 @@
                                 android:layout_marginStart="@dimen/dimens_16dp"
                                 android:layout_marginEnd="@dimen/dimens_32dp"
                                 android:layout_marginBottom="@dimen/dimens_32dp"
-                                android:text="rahman_julio"
+                                android:text="@string/julio_instagram"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toEndOf="@id/mcv_1"
@@ -248,7 +255,8 @@
                                     android:layout_height="match_parent"
                                     android:layout_margin="@dimen/dimens_4dp"
                                     android:src="@drawable/ic_github"
-                                    app:tint="@android:color/white" />
+                                    app:tint="@android:color/white"
+                                    tools:ignore="ContentDescription" />
                             </com.google.android.material.card.MaterialCardView>
 
                             <TextView
@@ -258,7 +266,7 @@
                                 android:layout_marginStart="@dimen/dimens_16dp"
                                 android:layout_marginTop="@dimen/dimens_32dp"
                                 android:layout_marginEnd="@dimen/dimens_32dp"
-                                android:text="Source Code of This Project"
+                                android:text="@string/source_code_title"
                                 android:textSize="@dimen/size_18sp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toEndOf="@id/mcv_2"
@@ -271,7 +279,7 @@
                                 android:layout_marginStart="@dimen/dimens_16dp"
                                 android:layout_marginEnd="@dimen/dimens_32dp"
                                 android:layout_marginBottom="@dimen/dimens_32dp"
-                                android:text="github.com/JulioRahman/lezat-android"
+                                android:text="@string/lezat_github"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toEndOf="@id/mcv_2"
@@ -321,7 +329,8 @@
                                     android:layout_height="match_parent"
                                     android:layout_margin="@dimen/dimens_4dp"
                                     android:src="@drawable/ic_fastfood"
-                                    app:tint="@android:color/white" />
+                                    app:tint="@android:color/white"
+                                    tools:ignore="ContentDescription" />
                             </com.google.android.material.card.MaterialCardView>
 
                             <TextView
@@ -331,7 +340,7 @@
                                 android:layout_marginStart="@dimen/dimens_16dp"
                                 android:layout_marginTop="@dimen/dimens_32dp"
                                 android:layout_marginEnd="@dimen/dimens_32dp"
-                                android:text="Source Content"
+                                android:text="@string/source_content"
                                 android:textSize="@dimen/size_18sp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toEndOf="@id/mcv_3"
@@ -344,7 +353,7 @@
                                 android:layout_marginStart="@dimen/dimens_16dp"
                                 android:layout_marginEnd="@dimen/dimens_32dp"
                                 android:layout_marginBottom="@dimen/dimens_32dp"
-                                android:text="TheMealDB.com"
+                                android:text="@string/themealdb_com"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toEndOf="@id/mcv_3"
@@ -353,6 +362,28 @@
                     </com.google.android.material.card.MaterialCardView>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/text_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimens_32dp"
+                android:text="@string/by"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/list_profile" />
+
+            <app.rive.runtime.kotlin.RiveAnimationView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimens_64dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_3"
+                app:riveAnimation="logo still"
+                app:riveArtboard="Kencur"
+                app:riveAutoPlay="true"
+                app:riveLoop="LOOP"
+                app:riveResource="@raw/kencur" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

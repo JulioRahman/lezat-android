@@ -13,8 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Lezat">
         <activity
-            android:name=".ui.MainActivity"
-            android:theme="@style/Theme.Lezat.NoActionBar">
+            android:name=".ui.SplashScreenActivity"
+            android:theme="@style/Theme.Lezat.NoActionBar.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,11 +22,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.DetailActivity"
+            android:name=".ui.MainActivity"
             android:theme="@style/Theme.Lezat.NoActionBar" />
         <activity
+            android:name=".ui.DetailActivity"
+            android:theme="@style/Theme.Lezat.NoActionBar.FadeTransition" />
+        <activity
             android:name=".ui.ProfileActivity"
-            android:theme="@style/Theme.Lezat.NoActionBar" />
+            android:theme="@style/Theme.Lezat.NoActionBar.FadeTransition" />
 
         <meta-data
             android:name="preloaded_fonts"

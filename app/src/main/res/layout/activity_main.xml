@@ -19,6 +19,9 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/white"
             android:padding="@dimen/dimens_16dp"
+            android:paddingStart="@dimen/dimens_16dp"
+            android:paddingEnd="@dimen/dimens_16dp"
+            app:contentInsetEndWithActions="@dimen/dimens_16dp"
             app:menu="@menu/menu_main" />
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -32,15 +35,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/tvTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/dimens_32dp"
-                android:fontFamily="@font/newsreader"
-                android:text="@string/app_name"
-                android:textColor="@android:color/black"
-                android:textSize="@dimen/size_32sp"
+            <ImageView
+                android:id="@+id/imgTitle"
+                android:layout_width="@dimen/dimens_96dp"
+                android:layout_height="@dimen/dimens_32dp"
+                android:layout_marginStart="@dimen/dimens_32dp"
+                android:contentDescription="@string/lezat_logo"
+                android:scaleType="fitCenter"
+                android:src="@drawable/img_lezat"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -181,7 +183,7 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                app:layout_constraintTop_toBottomOf="@id/imgTitle"
                 tools:listitem="@layout/item_meal" />
 
             <androidx.recyclerview.widget.RecyclerView

@@ -2,4 +2,22 @@
     <string name="app_name">Lezat</string>
     <string name="action_about">About</string>
     <string name="bullet">&#11044;</string>
+    <string name="u2b24">⬤</string>
+
+    <string name="by">by</string>
+    <string name="avatar">Avatar</string>
+
+    <string name="kencur_logo">Kencur Logo</string>
+    <string name="lezat_logo">Lezat Logo</string>
+
+    <string name="julio_name">Julio Rahman</string>
+    <string name="julio_email">julio.rahman@gmail.com</string>
+    <string name="instagram_title">Find Me on Instagram!</string>
+    <string name="julio_instagram">rahman_julio</string>
+    <string name="source_code_title">Source Code of This Project</string>
+    <string name="lezat_github">github.com/JulioRahman/lezat-android</string>
+    <string name="source_content">Source Content</string>
+    <string name="themealdb_com">TheMealDB.com</string>
+    <string name="instructions">Instructions</string>
+    <string name="no_data">No Data</string>
 </resources>

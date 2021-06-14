@@ -16,12 +16,16 @@
         <item name="android:fontFamily">@font/montserrat</item>
 
         <item name="android:windowActivityTransitions">true</item>
-        <item name="android:windowEnterTransition">@transition/fade</item>
-        <item name="android:windowExitTransition">@transition/fade</item>
         <item name="android:windowSharedElementEnterTransition">
             @transition/list_detail_transition
         </item>
         <item name="android:windowSharedElementExitTransition">
+            @transition/list_detail_transition
+        </item>
+        <item name="android:windowSharedElementReenterTransition">
+            @transition/list_detail_transition
+        </item>
+        <item name="android:windowSharedElementReturnTransition">
             @transition/list_detail_transition
         </item>
     </style>
@@ -31,7 +35,16 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.Lezat.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.Lezat.NoActionBar.SplashScreen">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
 
-    <style name="Theme.Lezat.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.Lezat.NoActionBar.FadeTransition">
+        <item name="android:windowEnterTransition">@transition/fade</item>
+        <item name="android:windowExitTransition">@transition/fade</item>
+        <item name="android:windowReenterTransition">@transition/fade</item>
+        <item name="android:windowReturnTransition">@transition/fade</item>
+    </style>
+
+    <style name="Theme.Lezat.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 </resources>

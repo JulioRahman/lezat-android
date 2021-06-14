@@ -19,5 +19,6 @@
     <string name="source_content">Source Content</string>
     <string name="themealdb_com">TheMealDB.com</string>
     <string name="instructions">Instructions</string>
-    <string name="no_data">No Data</string>
+    <string name="no_data">Try choosing another category or area.</string>
+    <string name="no_data_title">No Data\nAvailable, yet</string>
 </resources>

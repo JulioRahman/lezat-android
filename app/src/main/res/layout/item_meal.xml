@@ -18,10 +18,9 @@
 
     <ImageView
         android:id="@+id/icon_1"
-        android:layout_width="@dimen/dimens_64dp"
-        android:layout_height="@dimen/dimens_64dp"
-        android:layout_marginBottom="@dimen/dimens_16dp"
-        android:src="@drawable/ic_error"
+        android:layout_width="@dimen/dimens_128dp"
+        android:layout_height="@dimen/dimens_128dp"
+        android:src="@drawable/ic_no_data"
         app:layout_constraintBottom_toTopOf="@id/text_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,13 +29,29 @@
 
     <TextView
         android:id="@+id/text_1"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/no_data"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="@dimen/dimens_32dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/no_data_title"
+        android:textAlignment="center"
+        android:textSize="@dimen/size_18sp"
+        app:layout_constraintBottom_toTopOf="@id/text_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/icon_1" />
+
+    <TextView
+        android:id="@+id/text_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimens_32dp"
+        android:text="@string/no_data"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_1" />
 
     <View
         android:layout_width="0dp"
@@ -55,6 +70,7 @@
         android:layout_marginVertical="@dimen/dimens_32dp"
         android:clickable="true"
         android:focusable="true"
+        android:visibility="invisible"
         app:cardCornerRadius="@dimen/dimens_32dp"
         app:cardElevation="@dimen/dimens_16dp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -34,7 +34,7 @@ class AreaAdapter(
                 binding.tvArea.text = strName
 
                 Glide.with(context)
-                    .load("https://www.countryflags.io/${strCode.lowercase()}/flat/64.png")
+                    .load("https://flagsapi.com/${strCode}/flat/64.png")
                     .placeholder(ShimmerUtil.getShimmerDrawable())
                     .into(binding.ivArea)
 

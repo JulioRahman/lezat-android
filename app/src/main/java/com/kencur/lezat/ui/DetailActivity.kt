@@ -52,6 +52,7 @@ class DetailActivity : AppCompatActivity() {
         }
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         if (bsBehavior.state == BottomSheetBehavior.STATE_COLLAPSED)
             super.onBackPressed()

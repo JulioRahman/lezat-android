@@ -72,7 +72,7 @@
         android:focusable="true"
         android:visibility="invisible"
         app:cardCornerRadius="@dimen/dimens_32dp"
-        app:cardElevation="@dimen/dimens_16dp"
+        app:cardElevation="@dimen/dimens_8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">

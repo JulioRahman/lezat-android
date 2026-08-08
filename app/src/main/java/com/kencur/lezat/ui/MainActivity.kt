@@ -7,8 +7,13 @@ import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
 import android.view.MotionEvent
+import android.view.ViewGroup
 import android.widget.TextView
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updateLayoutParams
 import com.kencur.lezat.R
 import com.kencur.lezat.adapter.AreaAdapter
 import com.kencur.lezat.adapter.MealAdapter
@@ -30,8 +35,19 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(0, 0, 0, systemBars.bottom)
+            binding.toolbar.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                topMargin = systemBars.top
+            }
+            insets
+        }
+
         val mealContent = MealContent.MEAL.shuffled()
         defaultTextColors = binding.text1.textColors
 
@@ -89,7 +105,7 @@ class MainActivity : AppCompatActivity() {
         getCategoryViews().forEachIndexed { i, tv ->
             tv.setOnClickListener {
                 changeCategoryState(
-                    CategoryState.values()[i]
+                    CategoryState.entries[i]
                 )
             }
         }

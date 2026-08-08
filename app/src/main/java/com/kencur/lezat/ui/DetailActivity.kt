@@ -1,7 +1,14 @@
 package com.kencur.lezat.ui
 
 import android.os.Bundle
+import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.IntentCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updateLayoutParams
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.kencur.lezat.databinding.ActivityDetailBinding
@@ -17,12 +24,24 @@ class DetailActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.toolbar.setNavigationOnClickListener { onBackPressed() }
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(0, 0, 0, systemBars.bottom)
+            binding.toolbar.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                topMargin = systemBars.top
+            }
+            insets
+        }
 
-        val meal = intent.getParcelableExtra<Meal>(EXTRA_DATA)
+        binding.toolbar.setNavigationOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
+
+        val meal = IntentCompat.getParcelableExtra(intent, EXTRA_DATA, Meal::class.java)
         meal?.let {
             ViewUtil.setMealTitle(meal.strMeal, binding.tvTitle)
             binding.tvCategory.text = meal.strCategory
@@ -47,17 +66,22 @@ class DetailActivity : AppCompatActivity() {
                 .load(meal.strMealThumb)
                 .placeholder(ShimmerUtil.getShimmerDrawable())
                 .into(binding.ivMeal)
-        } ?: run {
-            onBackPressed()
-        }
-    }
 
-    @Deprecated("Deprecated in Java")
-    override fun onBackPressed() {
-        if (bsBehavior.state == BottomSheetBehavior.STATE_COLLAPSED)
-            super.onBackPressed()
-        else
-            bsBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+            // Register predictive back callback for BottomSheet handling
+            onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    if (bsBehavior.state == BottomSheetBehavior.STATE_COLLAPSED) {
+                        // Remove this callback so the default back behavior (finish) runs
+                        isEnabled = false
+                        onBackPressedDispatcher.onBackPressed()
+                    } else {
+                        bsBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+                    }
+                }
+            })
+        } ?: run {
+            finish()
+        }
     }
 
     private fun setInstructions(list: List<String>) {

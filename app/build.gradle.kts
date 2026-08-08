@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace =  "com.kencur.lezat"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.kencur.lezat"
-        minSdk = 21
-        targetSdk = 35
+        minSdk = 23
+        targetSdk = 36
         versionCode = 8
         versionName = "0.1.3"
 
